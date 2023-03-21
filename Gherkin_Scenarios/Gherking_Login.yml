@@ -1,0 +1,27 @@
+Feature: Netflix Login
+Scenario: Successful login
+    Given I am on the Netflix login page
+    When I enter valid login credentials
+    And click on the login button
+    Then I should be redirected to the Netflix home page
+    
+#######################################################
+
+
+Feature: Netflix Login
+Scenario: Invalid login
+    Given I am on the Netflix login page
+    When I enter invalid login credentials
+    And click on the login button
+    Then I should see an error message indicating invalid login credentials
+
+#######################################################
+
+
+Feature: Netflix Login
+Scenario: Forgot password
+    Given I am on the Netflix login page
+    When I click on the "Forgot Password" link
+    And enter my email address
+    And click on the "Reset Password" button
+    Then I should receive an email with instructions on how to reset my password
