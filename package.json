@@ -1,0 +1,15 @@
+{
+  "name": "netflixcypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "html-report": "cypress run --spec cypress/e2e/Netflix_Test/Netflix_Login.cy.js --browser electron --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.8.1",
+    "cypress-mochawesome-reporter": "^3.3.0"
+  }
+}

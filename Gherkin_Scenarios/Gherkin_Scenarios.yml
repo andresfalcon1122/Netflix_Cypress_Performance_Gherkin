@@ -1,0 +1,41 @@
+Feature: Search Functionality
+
+Scenario: Search for a movie
+  Given I am on the Netflix homepage
+  When I enter "The Matrix" in the search bar
+  And I click the search button
+  Then I should see "The Matrix" in the search results
+#######################################################
+
+
+Feature: Video Playback
+
+Scenario: Play a movie
+  Given I am on the Netflix homepage
+  When I click on the movie "The Matrix"
+  And I click on the play button
+  Then the movie should start playing
+
+
+#######################################################
+Feature: Adding to Watchlist
+
+Scenario: Add a movie to the watchlist
+  Given I am on the Netflix homepage
+  When I search for "The Matrix"
+  And I click on "The Matrix" in the search results
+  And I click the "Add to Watchlist" button
+  Then "The Matrix" should be added to my watchlist
+
+
+#######################################################
+
+
+Feature: User Account Management
+
+Scenario: Login to the account
+  Given I am on the Netflix homepage
+  When I click on the "Sign In" button
+  And I enter my valid email and password
+  And I click the "Sign In" button
+  Then I should be logged in to my account

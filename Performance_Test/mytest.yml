@@ -1,0 +1,52 @@
+config:
+  payload:
+    path: "creds.csv"
+    fields:
+      - "username"
+      - "password"
+
+  target: "https://www.netflix.com"
+  phases:
+    - duration: 10
+      arrivalRate: 3
+
+      
+  ###Comment this to don't give a lot of load in Netflix to prevent IP blocking
+  #     rampTo: 100
+  #     name: "Ramping up load"
+  #   - duration: 600
+  #     arrivalRate: 100
+  #     name: "Sustained load"
+  #   - duration: 300
+  #     arrivalRate: 10
+  #     rampTo: 0
+  #     name: "Ramping down load"
+  # processor: "./artillery-processor.js"
+
+scenarios:
+  - name: "Netflix Homepage"
+    flow:
+      - get:
+          url: "/browse"
+          name: "Browse Page"
+      - get:
+          url: "/login"
+          name: "Login Page"
+      - post:
+          url: "/api/shakti/vfe/33c9e2d2"
+          json:
+            userLoginId: "{{ $.username}}"
+            password: "{{ $.password}}"
+          headers:
+            content-type: "application/json"
+
+          capture:
+            json: "$.Authentication"
+            name: "Get Auth URL"
+            as: "authURL"
+      - get:
+          url: "{{ $.Authentication }}"
+          name: "Auth URL"
+      - get:
+          url: "/browse"
+          name: "Browse Page"
