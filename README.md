@@ -1,9 +1,11 @@
 # Netflix_Cypress_Performance_Gherkin
 Cypress project, Load Testing
 
-Done with WSL(Linux) Ubuntu 20.4
-Nodejs V v19.8.1
-npm V 9.5.1
+# **Done with WSL(Linux) Ubuntu 20.4**
+
+**Nodejs V v19.8.1**
+
+**npm V 9.5.1**
 
 
 Netflix Cypress Test Suite
