@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "html-report": "cypress run --spec cypress/e2e/Netflix_Test/Netflix_Login.cy.js --browser electron --headed"
+    "html-report": "cypress run --spec cypress/e2e/Netflix_Test/netflix-login.spec.cy.js --browser electron --headed"
   },
   "author": "",
   "license": "ISC",
